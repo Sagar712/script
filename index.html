@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,  minimum-scale=1, maximum-scale=1"
+    />
+	  
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+	<link rel="manifest" href="./manifest.json">
+	<link rel="shortcut icon" href="./mask294.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css"/>
+
+    <title>Application</title>
+	<script>
+		if(localStorage.getItem("DarkModeScript") == null)
+            localStorage.setItem("DarkModeScript", "on");
+        let mode =localStorage.getItem("DarkModeScript");
+        if(mode=="on")
+            document.documentElement.setAttribute("data-theme", "root");
+        else
+            document.documentElement.setAttribute("data-theme", "dark");
+    </script>
+  </head>
+  <body>
+	<header>
+		<div class="logo"><i class="fas fa-mask"></i> Script</div>
+
+		<div class="menuitems2">
+			<div class="icons" onclick="swipeleft1()">
+				<i class="fas fa-mask" id="icon1"></i>
+			</div>
+
+			<div class="icons" onclick="swipeleft2()" style="color:rgb(148, 108, 0);">
+				<i class="fas fa-calculator" id="icon2"></i>
+			</div>
+
+			<div class="icons" onclick="location.href='./backup.html'" style="color:rgb(148, 108, 0);">
+				<i class="fas fa-cloud"></i>
+			</div>
+
+			<div class="icons" onclick="location.href='./import-export/import-export.html'" style="color:rgb(148, 108, 0);">
+				<i class="fas fa-upload"> </i> | <i class="fas fa-download"></i> </i>
+			</div>
+		</div>
+
+		<div class="bar">
+			<div class="addbtnbar" onclick="togglePopup('popupTask')">
+				<i style="font-size: 1.1rem;" class="fas fa-plus"></i>
+			</div>
+            <button class="menubtn-bar" onclick="popupmenu()">
+				<i id="changeclas" class="fas fa-ellipsis-v" style="font-size: 1.3rem;"></i>
+            </button>
+        </div>
+	</header>
+
+	<div class="menuitems">
+        <button class="btnn" onclick="window.location = './backup.html'">Backup</button>
+        <button class="btnn" onclick="window.location = './import-export/import-export.html'">im/ex-port</button>
+		<button class="btnn" onclick="window.location = './contact.html'">Other</button>
+    </div>
+	<div class="nextoverlay" onclick="popupmenu()"></div>
+
+	<div class="allContent" id="allcont">
+		
+		<div id="content1">
+			<div class="addBtn">
+				<button onclick="togglePopup('popupTask')">Encrypt New Data +</button>
+			</div>
+			<div class="AllTasks">
+
+			</div>
+		</div>
+		<div id="content2">
+        <br />
+        <div class="inp">
+          <input type="text" placeholder=" List item name" autocomplete="off" id="name" />
+          <input
+            type="number"
+            placeholder=" Quantity"
+            autocomplete="off"
+            id="quant"
+          />
+          <input
+            type="number"
+            placeholder=" Price"
+            autocomplete="off"
+            id="price"
+          />
+        </div>
+	</div>
+		
+	<div class="popupTask">
+		<div class="closebutn" onclick="togglePopup('popupTask')"><i class="fas fa-times"></i></div>
+		<div class="taskTitle"> <input type="text" id="title" placeholder=" Write Title..."> </div>
+
+		<div class="taskTitle"> <input type="number" id="key" autocomplete="off" placeholder=" Enter key eg. 12345 if not entered then default key will be used"> </div>
+		
+		<div class="description"> <textarea  id="description2" rows="5" placeholder=" Task Description...."></textarea> </div>
+		<div class="finalbtns">
+			<button style="background-color: rgb(15, 209, 151);" onclick="inputData()">Save</button>
+			<button style="background-color: rgb(182, 59, 59);" onclick="togglePopup('popupTask')">Cancel</button>
+		</div>
+	</div>
+	<div class="overlay" onclick="togglePopup('popupTask')"></div>
+
+	<script src="./app.js"></script>
+  </body>
+</html>

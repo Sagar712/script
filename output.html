@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,  minimum-scale=1, maximum-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+
+    <link rel="shortcut icon" href="./mask294.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Application</title>
+  </head>
+  <body>
+    <header style="display: flex; justify-content: center; align-items: center; height: 2.5rem; position: relative;">
+      <p id="scriptTitle" style="font-size: 1.3rem; font-weight: bold;"></p>
+    </header>
+  
+    
+  
+    <div class="containsinputs">
+      <div class="backBtn" onclick="location.href='./'"><i class="fas fa-chevron-left"> </i>  back</div>
+      <div class="inputKey">
+        <input type="password" id="key" placeholder=" Enter key.." onkeyup="fetchDecryption()">
+  
+        <div style="display: flex; height: 2rem;">
+            <div class="copyicon" onclick="copyElementText()">
+                <i class="fas fa-clipboard"></i>
+            </div>
+            <div class="edticon" onclick="edtElement()">
+                <i class="fas fa-pen"></i>
+            </div>
+            <div class="delicon" onclick="delElement()">
+                <i class="far fa-trash-alt"></i>
+            </div>
+      </div>
+      
+    </div>	
+    </div>
+      
+    
+      <div class="addbutnn"></div>    
+  
+      <div class="decryptedMsg">
+          <p id="msgdecrypt">
+              
+          </p>
+      </div>
+  
+  
+    <script src="./output.js"></script>
+  </body>
+</html>
