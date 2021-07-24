@@ -1,6 +1,6 @@
 {
-    "name":"Secret - Script",
-    "short_name":"secret",
+    "name":"Script",
+    "short_name":"script",
     "start_url":".",
     "background_color":"rgb(255, 190, 13)",
     "theme_color":"rgb(207, 142, 0)",

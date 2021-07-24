@@ -1,10 +1,24 @@
+const assets = [
+    "./",
+    "./app.js", 
+    "./style.css", 
+    "./mask294.png",
+    "./contact.html", 
+    "./howto.html", 
+    "./otherstyle.css",
+    "./output.html", 
+    "./output.js", 
+    "./backup.html", 
+    "./backup.js", 
+    "./backstyle.css",
+    "./import-export/import-export.css", 
+    "./import-export/import-export.html", 
+    "./import-export/import-export.js"
+]
 self.addEventListener("install", e => {
     e.waitUntil(
         caches.open("script_files").then(cache => {
-            return cache.addAll(["./", "./app.js", "./style.css", "./mask294.png",
-             "./contact.html", "./howto.html", "./otherstyle.css",
-              "./output.html", "./output.js", "./backup.html", "./backup.js", "./backstyle.css",
-                "./import-export/import-export.css", "./import-export/import-export.html", "./import-export/import-export.js"]);
+            return cache.addAll(assets);
         })
     );
 });
